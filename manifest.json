@@ -1,0 +1,11 @@
+{
+    "name": "Coin Prices",
+    "version": "1.0.0",
+    "description": "This is an extension to look up actual coin prices",
+    "manifest_version": 3,
+    "author": "Emil S",
+    "action": {
+        "default_popup": "index.html",
+        "default_title": "Actual Coin Prices"
+    }
+}
