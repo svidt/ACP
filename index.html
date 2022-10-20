@@ -4,27 +4,56 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Berlin Conceret Line-up</title>
+    <title>Actual Coin Prices (ACP)</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="row">
-        <div class="column title">
-            <h1>Coin Prices</h1>Name Symbol MC Price
+
+    <header>
+        <h1>Actual Coin Prices ACP® 2022</h1>
+        <form id="new-task-form">
+        <input
+            type="text"
+            name="new-task-input"
+            id="new-task-input"
+            placeholder="What do you have planned?" />
+        <input
+            type="submit"
+            id="new-task-submit"
+            value="Add task" />
+        </form>
+    </header>
+
+    <main>
+        <section class="task-list">
+        <h2>Tasks</h2>
+
+        <div id="tasks">
+            
+            <!-- <div class="task">
+            <div class="content">
+                <input
+                type="text"
+                class="text"
+                value="My shiny task"
+                readonly
+                />
+                <input
+                type="text"
+                class="coin"
+                value="My shiny task"
+                readonly
+                />
+            </div>
+            <div class="actions">
+                <button class="edit">Edit</button>
+                <button class="delete">Delete</button>
+            </div>  
+            </div> -->
+
         </div>
-        <div class="column" id="coins" style="background-color:#FFB695">
-            <h2>Column 1:</h2>
-            <p>data...</p>
-        </div>
-        <div class="column" style="background-color:#96D1CD">
-            <h2>Column 2:</h2>
-            <p>data...</p>
-        </div>
-        <div class="column" style="background-color:#74C3E1">
-            <h2>Column 2:</h2>
-            <p>data...</p>
-        </div>
-    </div>
+        </section>
+    </main>
 </body>
 <script src="script.js"></script>
 </html>

@@ -1,36 +1,161 @@
-body {
+:root {
+    --dark: #374151;
+    --darker: #1f2937;
+    --darkest: #111827;
+    --gray: #6b7280;
+    --light: #eee;
+    --pink: #d6d150;
+    --purple: #c27a2e;
+}
+
+* {
     box-sizing: border-box;
-    width: 100vw;
-    height: 100hv;
-    padding: 1rem;
+    margin: 0;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
-.title {
-    text-align: left;
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background: var(--dark);
+    color: #fff;
 }
 
-.column {
-float: left;
-width: 60%;
+header {
+    padding: 2rem 1rem;
+    max-width: 800px;
+    width: 100%;
+    margin: 0 auto;
 }
 
-.row:after {
-content: "";
-display: table;
-clear: both;
+header h1 {
+    font-size: 2.5rem;
+    font-weight: 200;
+    color: var(--gray);
+    margin-bottom: 1rem;
 }
 
-img {
-    width: 2rem;
-    height: 2rem;
+#new-task-form {
+    display: flex;
 }
 
-div {
+input, button {
+    appearance: none;
+    border: none;
+    outline: none;
+    background-color: transparent;
+}
+
+#new-task-input {
+    flex: 1 1 0%;
+    background-color: var(--darker);
     padding: 1rem;
-    margin: 0.5rem;
     border-radius: 1rem;
-    text-align: center;
-    display: table-cell;
-    vertical-align: middle;
+    margin-right: 1rem;
+    color: var(--light);
+    font-size: 1rem;   
+}
+
+#new-task-input::placeholder {
+    color: var(--gray);
+}
+
+#new-task-submit {
+    color: var(--pink);
+    font-size: 1rem;
+    font-weight: 700;
+    background-image: linear-gradient(to right, var(--pink),
+    var(--purple));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-animation: glow 3s ease-in-out infinite alternate;
+    cursor: pointer;
+    transition: 0.1s;
+}
+
+@-webkit-keyframes glow {
+    from {
+        text-shadow: 0 0 0px rgb(255, 244, 181), 0 0 5px #ffd321;
+    }
+}
+
+#new-task-submit:active {
+    transform: scale(0.9);    
+}
+
+main {
+    flex: 1 1 0%;
+    max-width: 800px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.task-list {
+    padding: 1rem;
+}
+
+.task-list h2 {
+    font-size: 1.5rem;
+    font-weight: 300;
+    color: var(--gray);
+    margin-bottom: 1rem;
+}
+
+#tasks .task {
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--darkest);
+    padding: 1rem;
+    border-radius: 1rem;
+    margin-bottom: 1rem;
+}
+
+#tasks .task .content {
+    flex: 1 1 0%;
+}
+
+#tasks .task .content .text {
+    color: var(--light);
+    font-size: 1rem;
+    width: 100%;
+    display: block;
+    transition: 0.2s;
+}
+
+#tasks .task .content .text:not(:read-only) {
+    color: var(--pink);
+}
+
+#tasks .task .actions {
+    display: flex;
+    margin: 0 -0.5rem;
+}
+
+.task .actions button {
+    cursor: pointer;
+    margin: 0 0.5rem;
+    font-size: 1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    transition: 0.4s;
+}
+
+.task .actions button:hover {
+    opacity: 0.8;
+}
+
+.task .actions button:active {
+    opacity: 0.6;
+}
+
+.task .actions .edit {
+    background-image: linear-gradient(to right, var(--pink),
+    var(--purple));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;    
+}
+
+.task .actions .delete {
+    color: crimson; 
 }
